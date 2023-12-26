@@ -22,7 +22,7 @@ import {
 } from "@mui/icons-material"
 import { useDispatch, useSelector } from "react-redux"
 import { setMode, setLogout } from "state"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import FlexBetween from "components/FlexBetween"
 
 const Navbar = () => {
@@ -47,7 +47,7 @@ const Navbar = () => {
                 fontWeight="bold"
                 fontSize="clamp(1rem, 2rem, 2.25rem)"
                 color="primary"
-                onClick={() => Navigate("/home")}
+                onClick={() => navigate("/home")}
                 sx={{
                     "&:hover": {
                         color: primaryLight,
@@ -95,7 +95,7 @@ const Navbar = () => {
                                 backgroundColor: neutralLight
                             }
                         }}
-                        input={<inputBase />}
+                        input={<InputBase />}
                     >
                         <MenuItem value={fullName}>
                             <Typography>{fullName}</Typography>
@@ -131,7 +131,7 @@ const Navbar = () => {
                     </IconButton>
                 </Box>
                 
-            <FlexBetween display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap="3 rem">
+            <FlexBetween display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap="3rem">
                 <IconButton 
                     onClick={() => dispatch(setMode())}
                     sx={{ fontSize: "25px" }}
